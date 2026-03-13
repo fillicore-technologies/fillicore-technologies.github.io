@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fillicore Technologies | Web, IoT & SaaS</title>
+    <meta name="description" content="Fillicore Technologies builds high-performance web platforms, innovative IoT products, and scalable SaaS solutions.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-bold mb-4 gradient-text">Fillicore Technologies</h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Engineering the future through high-performance web platforms, cutting-edge IoT products, and scalable SaaS solutions.
+        </p>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+        
+        <div class="glass-card p-8 rounded-2xl shadow-xl">
+            <div class="text-blue-400 mb-4 text-3xl">🌐</div>
+            <h2 class="text-xl font-semibold mb-2 text-white">Web Platforms</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Custom e-commerce and enterprise web applications built with modern frameworks for speed and SEO.
+            </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl shadow-xl">
+            <div class="text-indigo-400 mb-4 text-3xl">🔌</div>
+            <h2 class="text-xl font-semibold mb-2 text-white">IoT Products</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Seamlessly connecting hardware and software through smart automation and embedded systems.
+            </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl shadow-xl">
+            <div class="text-purple-400 mb-4 text-3xl">☁️</div>
+            <h2 class="text-xl font-semibold mb-2 text-white">SaaS Solutions</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Building multi-tenant architectures and cloud-based software that scale with your business growth.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="mt-16 text-center">
+        <a href="https://fillicore.com" 
+           class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-blue-500/20">
+            Visit Official Website
+        </a>
+        <p class="mt-6 text-gray-500 text-sm">
+            © 2026 Fillicore Technologies Private Limited. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
