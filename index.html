@@ -3,75 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fillicore Technologies | Web, IoT & SaaS</title>
-    <meta name="description" content="Fillicore Technologies builds high-performance web platforms, innovative IoT products, and scalable SaaS solutions.">
+    <title>Fillicore Technologies Pvt Ltd| Salem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+        :root {
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --bg: #030712;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 50% -20%, #1e1b4b, transparent),
+                radial-gradient(circle at 0% 100%, #0f172a, transparent);
+            overflow-x: hidden;
+        }
+
+        /* Animated Border Beam Effect */
+        .futuristic-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
+
+        .futuristic-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent, 
+                var(--primary), 
+                transparent 30%
+            );
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.5s;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .futuristic-card:hover::before {
+            opacity: 1;
+        }
+
+        .futuristic-card::after {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            background: #0f172a;
+            border-radius: inherit;
+            z-index: 0;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .glow-text {
+            text-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+        }
+
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6">
+<body class="min-h-screen flex items-center justify-center p-8">
 
-    <header class="text-center mb-12">
-        <h1 class="text-5xl font-bold mb-4 gradient-text">Fillicore Technologies</h1>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-            Engineering the future through high-performance web platforms, cutting-edge IoT products, and scalable SaaS solutions.
-        </p>
-    </header>
+    <div class="fixed top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]"></div>
 
-    <main class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl w-full">
         
-        <div class="glass-card p-8 rounded-2xl shadow-xl">
-            <div class="text-blue-400 mb-4 text-3xl">🌐</div>
-            <h2 class="text-xl font-semibold mb-2 text-white">Web Platforms</h2>
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Custom e-commerce and enterprise web applications built with modern frameworks for speed and SEO.
-            </p>
+        <div class="futuristic-card p-8 rounded-3xl group">
+            <div class="card-content">
+                <div class="mb-6 inline-block p-4 bg-blue-500/10 rounded-2xl text-cyan-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="cpu" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3 glow-text">Web Systems</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    High-performance neural architectures for the modern web. Built for speed, scale, and security.
+                </p>
+                <div class="flex items-center text-cyan-400 font-medium cursor-pointer">
+                    Initialize Protocol <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </div>
+            </div>
         </div>
 
-        <div class="glass-card p-8 rounded-2xl shadow-xl">
-            <div class="text-indigo-400 mb-4 text-3xl">🔌</div>
-            <h2 class="text-xl font-semibold mb-2 text-white">IoT Products</h2>
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Seamlessly connecting hardware and software through smart automation and embedded systems.
-            </p>
+        <div class="futuristic-card p-8 rounded-3xl group scale-105 shadow-[0_0_50px_-12px_rgba(112,0,255,0.3)] border-purple-500/30">
+            <div class="card-content">
+                <div class="mb-6 inline-block p-4 bg-purple-500/10 rounded-2xl text-purple-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="layers" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">IoT Core</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Hardware-software synthesis designed for the next generation of interconnected devices.
+                </p>
+                <div class="flex items-center text-purple-400 font-medium cursor-pointer">
+                    Sync Interface <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </div>
+            </div>
         </div>
 
-        <div class="glass-card p-8 rounded-2xl shadow-xl">
-            <div class="text-purple-400 mb-4 text-3xl">☁️</div>
-            <h2 class="text-xl font-semibold mb-2 text-white">SaaS Solutions</h2>
-            <p class="text-gray-400 text-sm leading-relaxed">
-                Building multi-tenant architectures and cloud-based software that scale with your business growth.
-            </p>
+        <div class="futuristic-card p-8 rounded-3xl group">
+            <div class="card-content">
+                <div class="mb-6 inline-block p-4 bg-emerald-500/10 rounded-2xl text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="cloud-lightning" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">SaaS Cloud</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Scalable cloud solutions optimized for global distribution and multi-tenant integrity.
+                </p>
+                <div class="flex items-center text-emerald-400 font-medium cursor-pointer">
+                    Deploy Node <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </div>
+            </div>
         </div>
 
-    </main>
+    </div>
 
-    <footer class="mt-16 text-center">
-        <a href="https://fillicore.com" 
-           class="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-blue-500/20">
-            Visit Official Website
-        </a>
-        <p class="mt-6 text-gray-500 text-sm">
-            © 2026 Fillicore Technologies Private Limited. All rights reserved.
-        </p>
-    </footer>
-
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
